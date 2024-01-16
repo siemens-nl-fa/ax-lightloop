@@ -5,23 +5,23 @@ CLASS Led IMPLEMENTS Iled //This Class implements the Iled interface, to make su
         IsOn : BOOL; //Private BOOl to keep track of the LED state
     END_VAR
     
-
-    METHOD PUBLIC GetState : BOOL //Method to get the state
+    ///Method to get the state
+    METHOD PUBLIC GetState : BOOL 
         GetState := IsOn; //Get the private state BOOL
         ;
     END_METHOD
-
-    METHOD PUBLIC TurnOn //Method to turn ON the LED
+    ///Method to turn ON the LED
+    METHOD PUBLIC TurnOn 
         IsOn := TRUE; //Set the state to ON
         ;
     END_METHOD
-    
-    METHOD PUBLIC TurnOff //Method to turn OFF the LED
+    ///Method to turn OFF the LED
+    METHOD PUBLIC TurnOff 
         IsOn := FALSE; //Set the state to OFF
         ;
     END_METHOD
-
-    METHOD PUBLIC Toggle //Method to toggle the LED
+    ///Method to toggle the LED
+    METHOD PUBLIC Toggle 
         IF IsOn THEN //If the LED IsOn = true then set the LED to OFF
             IsOn := FALSE;
         ELSE

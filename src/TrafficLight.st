@@ -63,8 +63,9 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         ;
     END_METHOD
 
-    //Get the state of the invidual LED's
+            /// Get the state of the invidual LED's
     METHOD PUBLIC GetLedEquipmentState
+
         VAR_OUTPUT
             redHw :BOOL;
             yellowHw :BOOL;
@@ -75,17 +76,18 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         greenHw := Green.GetState();
     END_METHOD
 
-    //Set Time for yellow light
+            /// Set Time for yellow light
     METHOD PUBLIC setTimeYellow
+
         VAR_INPUT
             DelayTime : TIME;
         END_VAR
         YellowTime := DelayTime;
         ;
     END_METHOD
-
+///transition from red to green
     METHOD PUBLIC Go : BOOL
-        //transition from red to green
+        
         IF Red.GetState() AND Yellow.GetState() = FALSE OR IdleMode THEN
             IdleMode := FALSE;
             Red.TurnOff();
@@ -98,6 +100,7 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         ;
     END_METHOD
 
+    /// Transition from Green to Red
     METHOD PUBLIC Stop :BOOL
 
         IF Green.GetState() AND Yellow.GetState() = FALSE OR IdleMode OR Yellow.GetState() THEN
