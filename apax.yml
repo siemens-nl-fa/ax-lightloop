@@ -1,0 +1,35 @@
+name: "lightloop"
+version: 0.0.0
+type: app
+targets:
+  - "1500"
+  - "plcsim"
+  - "swcpu"
+  - "llvm"
+variables:
+  APAX_BUILD_ARGS:
+    - "--debug" # Generate debug information for target "1500"
+  # when running `apax build`, `stc` will be called with an additional `--input some-dir` parameter
+  IP_PLC: 192.168.1.50
+
+dependencies:
+  "@ax/system-timer": ^6.0.94
+devDependencies:
+  "@ax/sdk": 2311.0.1
+
+installStrategy: strict
+apaxVersion: 3.1.0
+
+scripts:
+  loadsim: apax sld load --accept-security-disclaimer -i ".\\bin\\plcsim" -t $IP_PLC --mode full -l debug
+  loadsw: apax sld load --accept-security-disclaimer -i ".\\bin\\swcpu" -t $IP_PLC  --mode full -l debug
+  load1500: apax sld load --accept-security-disclaimer -i ".\\bin\\1500" -t $IP_PLC --mode full -l debug
+  blsim:
+    - apax build
+    - apax loadsim
+  blsw:
+    - apax build
+    - apax loadsw
+  bl1500:
+    - apax build
+    - apax load1500
