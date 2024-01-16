@@ -16,14 +16,21 @@ dependencies:
   "@ax/system-timer": ^6.0.94
 devDependencies:
   "@ax/sdk": 2311.0.1
+  "@simatic-ax/snippetscollection": ^0.1.3
 
 installStrategy: strict
 apaxVersion: 3.1.0
 
+registries:
+  '@simatic-ax': 'https://npm.pkg.github.com/'
+
 scripts:
-  loadsim: apax sld load --accept-security-disclaimer -i ".\\bin\\plcsim" -t $IP_PLC --mode full -l debug
-  loadsw: apax sld load --accept-security-disclaimer -i ".\\bin\\swcpu" -t $IP_PLC  --mode full -l debug
-  load1500: apax sld load --accept-security-disclaimer -i ".\\bin\\1500" -t $IP_PLC --mode full -l debug
+  loadsim: apax sld load --accept-security-disclaimer -i ".\\bin\\plcsim" -t
+    $IP_PLC --mode full -l debug
+  loadsw: apax sld load --accept-security-disclaimer -i ".\\bin\\swcpu" -t
+    $IP_PLC  --mode full -l debug
+  load1500: apax sld load --accept-security-disclaimer -i ".\\bin\\1500" -t
+    $IP_PLC --mode full -l debug
   blsim:
     - apax build
     - apax loadsim

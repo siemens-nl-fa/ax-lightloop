@@ -81,7 +81,7 @@ NAMESPACE MyTest
             Assert.Equal(actualyellow, FALSE);
             Assert.Equal(actualgreen, TRUE);         
         END_METHOD
-        
+
         {Test} 
         /// TestStop
         /// Test is the traffic light will switch to yellow, then red ( RED not yet implemented because mocking is required for timer)

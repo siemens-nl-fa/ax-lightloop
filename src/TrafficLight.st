@@ -17,7 +17,11 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         Timer : System.Timer.OnDelay;
     END_VAR
 
-
+   
+    METHOD PUBLIC GetState : Int
+        GetState := state;
+        ;
+    END_METHOD
 
     METHOD PUBLIC Cycle 
         VAR_INPUT

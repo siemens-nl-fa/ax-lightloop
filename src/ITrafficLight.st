@@ -6,6 +6,11 @@ INTERFACE ITrafficlight //ITrafficlight interfaces defines the minimum requireme
         greenHw :BOOL;
     END_VAR
     END_METHOD
+     /// GetState
+    /// Method to get the current state of the TrafficLight
+    /// Return value: state int
+    METHOD GetState : int
+    END_METHOD
     METHOD Go : BOOL  
     END_METHOD
     METHOD Stop : BOOL   
