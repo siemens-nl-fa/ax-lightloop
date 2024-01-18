@@ -1,3 +1,4 @@
+# This file defines the project and the required dependecies.
 name: "lightloop"
 version: 0.0.1
 type: app
@@ -10,10 +11,11 @@ variables:
   APAX_BUILD_ARGS:
     - "--debug" # Generate debug information for target "1500"
   # when running `apax build`, `stc` will be called with an additional `--input some-dir` parameter
-  IP_PLC: 192.168.1.50
+  IP_PLC: 192.168.0.1
 
 dependencies:
   "@ax/system-timer": ^6.0.94
+  "@ax/trace": ^2.7.0
 devDependencies:
   "@ax/sdk": 2311.0.1
   "@simatic-ax/snippetscollection": ^0.1.3

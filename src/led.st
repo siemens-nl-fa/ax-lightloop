@@ -30,4 +30,8 @@ CLASS Led IMPLEMENTS Iled //This Class implements the Iled interface, to make su
         ;       
     END_METHOD
 
+
+
+
+
 END_CLASS

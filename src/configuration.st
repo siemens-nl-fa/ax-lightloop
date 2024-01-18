@@ -4,10 +4,11 @@ CONFIGURATION PLC_1
 
     VAR_GLOBAL
         //Map LED's to HW output
-        LedHw AT %IB0 : LedHw;
+        LedHw AT %QB0 : LedHw;
         //Init Trafficlight
         trafficlight : Trafficlight;
         //Some Bools to control
         idle: BOOL;
+        count : INT;
     END_VAR
 END_CONFIGURATION

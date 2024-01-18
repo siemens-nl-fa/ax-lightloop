@@ -1,13 +1,14 @@
 {
   "name": "lightloop",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "lockFileVersion": "2",
   "installStrategy": "strict",
   "root": {
     "name": "lightloop",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "dependencies": {
-      "@ax/system-timer": "^6.0.94"
+      "@ax/system-timer": "^6.0.94",
+      "@ax/trace": "^2.7.0"
     },
     "devDependencies": {
       "@ax/sdk": "2311.0.1",
@@ -51,6 +52,16 @@
       "integrity": "sha512-z2qQVgSKHt78DJZTgIxoAvZdviUzzZmIC3A5bXoWx3ak4fot7D9sa0bKmKp90kP5JqVnkEbl12zYtrBBEVKmNg==",
       "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-timer/-/system-timer-6.0.94.tgz",
       "dependencies": {}
+    },
+    "@ax/trace": {
+      "name": "@ax/trace",
+      "version": "2.7.0",
+      "integrity": "sha512-yUmzjL5IKJ9NX5Q1THHN+LtW6llsZa+tw/jRZYQzKcxXTFJrGcCo5Qy45Dh0loxWGjZKmIe4YVG1ZwP3fdihJQ==",
+      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace/-/trace-2.7.0.tgz",
+      "dependencies": {
+        "@ax/trace-win-x64": "2.7.0",
+        "@ax/trace-linux-x64": "2.7.0"
+      }
     },
     "@ax/axunitst": {
       "name": "@ax/axunitst",
@@ -151,16 +162,6 @@
       "resolved": "https://registry.simatic-ax.siemens.io/@ax/simatic-pragma-stc-plugin/-/simatic-pragma-stc-plugin-2.0.12.tgz",
       "dependencies": {}
     },
-    "@ax/trace": {
-      "name": "@ax/trace",
-      "version": "2.7.0",
-      "integrity": "sha512-yUmzjL5IKJ9NX5Q1THHN+LtW6llsZa+tw/jRZYQzKcxXTFJrGcCo5Qy45Dh0loxWGjZKmIe4YVG1ZwP3fdihJQ==",
-      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace/-/trace-2.7.0.tgz",
-      "dependencies": {
-        "@ax/trace-win-x64": "2.7.0",
-        "@ax/trace-linux-x64": "2.7.0"
-      }
-    },
     "@ax/diagnostic-buffer": {
       "name": "@ax/diagnostic-buffer",
       "version": "1.2.0",
@@ -200,6 +201,32 @@
         "@ax/certificate-management-win-x64": "1.1.0",
         "@ax/certificate-management-linux-x64": "1.1.0"
       }
+    },
+    "@ax/trace-win-x64": {
+      "name": "@ax/trace-win-x64",
+      "version": "2.7.0",
+      "integrity": "sha512-hQeCiax20UPrSQIOMqSJg6OWdavunL9h6Irnlrgk4ht4hMZrDEWPnuIBfPNG2tAp3780GtefEl8b8QSk5h7jxQ==",
+      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace-win-x64/-/trace-win-x64-2.7.0.tgz",
+      "os": [
+        "win32"
+      ],
+      "cpu": [
+        "x64"
+      ],
+      "dependencies": {}
+    },
+    "@ax/trace-linux-x64": {
+      "name": "@ax/trace-linux-x64",
+      "version": "2.7.0",
+      "integrity": "sha512-LPfdNIbp9+7BuMFL/TtpQXGHrUx/+C1tTFC3YSWscP7TcHzDLWF3yBjqXHaNN01SmCi44S4AwJ9Q2E66QJ0Rtg==",
+      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace-linux-x64/-/trace-linux-x64-2.7.0.tgz",
+      "os": [
+        "linux"
+      ],
+      "cpu": [
+        "x64"
+      ],
+      "dependencies": {}
     },
     "@ax/axunitst-library": {
       "name": "@ax/axunitst-library",
@@ -403,32 +430,6 @@
       "version": "6.0.146",
       "integrity": "sha512-CGmwLBrT1ZRw9f6L1FylbVHV7l2BP8drp/NJKRAApNBtYuVE5U4H2kndizUKYLR4wbidt6Amu602ncvcJBUKNw==",
       "resolved": "https://registry.simatic-ax.siemens.io/@ax/target-mc7plus-linux-x64/-/target-mc7plus-linux-x64-6.0.146.tgz",
-      "os": [
-        "linux"
-      ],
-      "cpu": [
-        "x64"
-      ],
-      "dependencies": {}
-    },
-    "@ax/trace-win-x64": {
-      "name": "@ax/trace-win-x64",
-      "version": "2.7.0",
-      "integrity": "sha512-hQeCiax20UPrSQIOMqSJg6OWdavunL9h6Irnlrgk4ht4hMZrDEWPnuIBfPNG2tAp3780GtefEl8b8QSk5h7jxQ==",
-      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace-win-x64/-/trace-win-x64-2.7.0.tgz",
-      "os": [
-        "win32"
-      ],
-      "cpu": [
-        "x64"
-      ],
-      "dependencies": {}
-    },
-    "@ax/trace-linux-x64": {
-      "name": "@ax/trace-linux-x64",
-      "version": "2.7.0",
-      "integrity": "sha512-LPfdNIbp9+7BuMFL/TtpQXGHrUx/+C1tTFC3YSWscP7TcHzDLWF3yBjqXHaNN01SmCi44S4AwJ9Q2E66QJ0Rtg==",
-      "resolved": "https://registry.simatic-ax.siemens.io/@ax/trace-linux-x64/-/trace-linux-x64-2.7.0.tgz",
       "os": [
         "linux"
       ],
