@@ -7,7 +7,7 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         Green : Led;
 
         IdleMode: BOOL := false; //Init IdleMode to false
-        state : INT;
+        
 
         //Set the time that the light should be on
         YellowTime : TIME := TIME#1s;
@@ -15,6 +15,9 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
         GreenTime : TIME := TIME#1s;
 
         Timer : System.Timer.OnDelay;
+    END_VAR
+    VAR PRIVATE
+        state : INT; //Make sure that state cannot be manupulated from outside the class
     END_VAR
 
    
@@ -71,13 +74,11 @@ CLASS Trafficlight IMPLEMENTS ITrafficlight
     METHOD PUBLIC GetLedEquipmentState
 
         VAR_OUTPUT
-            redHw :BOOL;
-            yellowHw :BOOL;
-            greenHw :BOOL;
+            Leds : Leds;
         END_VAR;
-        redHw := Red.GetState();
-        yellowHw := Yellow.GetState();
-        greenHw := Green.GetState();
+        Leds.Red := Red.GetState();
+        Leds.Yellow := Yellow.GetState();
+        Leds.Green := Green.GetState();
     END_METHOD
 
             /// Set Time for yellow light

@@ -1,0 +1,11 @@
+{
+    "comment_snippet": {
+    "scope": "st",
+    "prefix": ["demo, snippet"],
+    "body": [
+        "/// This snippit is a demo snippit",
+        "/// And servers no other purpose then demo this functionality)"
+    ],
+    "description": "Add an Comment;"
+    }
+}

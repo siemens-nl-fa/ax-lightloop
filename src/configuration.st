@@ -3,13 +3,11 @@ CONFIGURATION PLC_1
     PROGRAM P1 WITH Main: StatusLedCtrl;
 
     VAR_GLOBAL
-        RedLed AT %Q0.0 : BOOL;
-        YellowLed AT %Q0.1 : BOOL;
-        GreenLed AT %Q0.3 : BOOL;
+        //Map LED's to HW output
+        LedHw AT %IB0 : LedHw;
+        //Init Trafficlight
         trafficlight : Trafficlight;
+        //Some Bools to control
         idle: BOOL;
-        Stop: BOOL;
-        Go: BOOL;
-        State: int;
     END_VAR
 END_CONFIGURATION

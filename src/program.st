@@ -1,27 +1,24 @@
 
 PROGRAM StatusLedCtrl
     VAR_EXTERNAL
-        RedLed  : BOOL;
-        YellowLed  : BOOL;
-        GreenLed : BOOL;
-        trafficlight : Trafficlight;
-        idle: BOOL;
-        Stop: BOOL;
-        Go: BOOL;
-        State: int;
+        LedHW : LedHw;
+        TrafficLight : Trafficlight;
+        Idle: BOOL;
+    END_VAR
+    VAR
+        SWLeds : leds;
     END_VAR
 
-    VAR
-        
-    END_VAR
 
     //Get the state of the traffic light
-    trafficlight.GetLedEquipmentState(RedLed, YellowLed, GreenLed);
+    TrafficLight.GetLedEquipmentState(SwLeds);
+
+    LedHW := SWLeds;
 
     //Execute the trafficlight statemachine
-    trafficlight.Cycle();
+    TrafficLight.Cycle();
 
     //Set the trafficlight to idle if idle bool is triggered
-    trafficlight.SetIdleMode(idle);
+    TrafficLight.SetIdleMode(Idle);
     ;
 END_PROGRAM

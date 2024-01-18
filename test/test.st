@@ -54,14 +54,12 @@ NAMESPACE MyTest
         {Test}
         METHOD PUBLIC TestGetEquipmentState
             VAR
-                actualred : BOOL;
-                actualyellow: BOOL;
-                actualgreen: BOOL;
+                Leds :leds;
             END_VAR
-            TestTrafficlight.GetLedEquipmentState(actualred, actualyellow, actualgreen);
-            Assert.Equal(actualred, FALSE);
-            Assert.Equal(actualyellow, FALSE);
-            Assert.Equal(actualgreen, FALSE);         
+            TestTrafficlight.GetLedEquipmentState(Leds);
+            Assert.Equal(Leds.Red, FALSE);
+            Assert.Equal(Leds.Yellow, FALSE);
+            Assert.Equal(Leds.Green, FALSE);          
         END_METHOD
 
         {Test}
@@ -70,16 +68,14 @@ NAMESPACE MyTest
         /// Return value: Pass or Fail
         METHOD PUBLIC TestGo
             VAR
-                actualred : BOOL;
-                actualyellow: BOOL;
-                actualgreen: BOOL;
+                Leds :leds;
             END_VAR
             TestTrafficlight.SetIdleMode(TRUE);
             TestTrafficlight.Go();
-            TestTrafficlight.GetLedEquipmentState(actualred, actualyellow, actualgreen);
-            Assert.Equal(actualred, FALSE);
-            Assert.Equal(actualyellow, FALSE);
-            Assert.Equal(actualgreen, TRUE);         
+            TestTrafficlight.GetLedEquipmentState(Leds);
+            Assert.Equal(Leds.Red, FALSE);
+            Assert.Equal(Leds.Yellow, FALSE);
+            Assert.Equal(Leds.Green, TRUE);         
         END_METHOD
 
         {Test} 
@@ -88,16 +84,14 @@ NAMESPACE MyTest
         /// Return value: Pass or Fail
         METHOD PUBLIC TestStop
             VAR
-                actualred : BOOL;
-                actualyellow: BOOL;
-                actualgreen: BOOL;
+                Leds :leds;
             END_VAR
             TestTrafficlight.SetIdleMode(TRUE);
             TestTrafficlight.Stop();
-            TestTrafficlight.GetLedEquipmentState(actualred, actualyellow, actualgreen);
-            Assert.Equal(actualred, FALSE);
-            Assert.Equal(actualyellow, TRUE); // check for first state ( yellow := true)
-            Assert.Equal(actualgreen, FALSE);         
+            TestTrafficlight.GetLedEquipmentState(Leds);
+            Assert.Equal(Leds.Red, FALSE);
+            Assert.Equal(Leds.Yellow, TRUE);
+            Assert.Equal(Leds.Green, FALSE);            
         END_METHOD
 
     END_CLASS

@@ -1,6 +1,5 @@
 # lightloop
 
-
 ## Description
 
 Simple AX project to show off some functions of AX Code. Including a basic structure using OOP for a trafficlight.
@@ -15,9 +14,9 @@ Includes some simple unittests to test the behaviour of the LED and TrafficLight
 
 ### Snippets
 
-Uses the Snippits collection from the [public AX github repository](https://github.com/simatic-ax/snippetscollectionhttps:/). 
+Uses the Snippits collection from the [public AX github repository](https://github.com/simatic-ax/snippetscollectionhttps:/).
 
-And a custom snippet for Comments.
+A custom snippet for Comments and a Demo snippit.
 
 ![snippet1](https://github.com/simatic-ax/tipps_and_tricks/raw/main/img/simple_snippet.gif)
 
@@ -39,7 +38,6 @@ Includes the Snippitscollection from the [public AX github repository](https://g
 
 Uses this git to show versioning.
 
-
 ## Support
 
 Please open a issue if any questions arrise.
@@ -47,7 +45,6 @@ Please open a issue if any questions arrise.
 ## Roadmap
 
 If you have ideas for releases in the future, it is a good idea to list them in the README.
-
 
 ## Authors and acknowledgment
 
