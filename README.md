@@ -38,6 +38,20 @@ Includes the Snippitscollection from the [public AX github repository](https://g
 
 Uses this git to show versioning.
 
+### Debugging
+
+.vscode folder contains the required launch.json to connect and debug PLCs'.
+
+use logpoints to inline monitor and the mon.mon file to create a file to monitor multiple variables.
+
+### Tracing
+
+plc_1.yml in .ax\plcs is required to select a local plc to trace on.
+
+trace.yml with the trace configuration is included in the trace folder.
+
+[Official AX trace docs](https://console.simatic-ax.siemens.io/docs/tracinghttps:/)
+
 ## Support
 
 Please open a issue if any questions arrise.
