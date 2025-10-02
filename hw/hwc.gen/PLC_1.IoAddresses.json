@@ -1,0 +1,359 @@
+{
+  "Version": 2,
+  "IoAddresses": [
+    {
+      "Ref": "Device1/DI",
+      "Submodules": [
+        {
+          "Name": "DI",
+          "HardwareIdentifier": 257,
+          "Inputs": {
+            "StartAddress": "9.0",
+            "EndAddress": "12.7",
+            "Length": 32,
+            "Source": "UserDefined",
+            "SignalLayout": [
+              {
+                "Name": "Channel_00DI",
+                "Offset": 0,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_01DI",
+                "Offset": 1,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_02DI",
+                "Offset": 2,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_03DI",
+                "Offset": 3,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_04DI",
+                "Offset": 4,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_05DI",
+                "Offset": 5,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_06DI",
+                "Offset": 6,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_07DI",
+                "Offset": 7,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_08DI",
+                "Offset": 8,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_09DI",
+                "Offset": 9,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_10DI",
+                "Offset": 10,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_11DI",
+                "Offset": 11,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_12DI",
+                "Offset": 12,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_13DI",
+                "Offset": 13,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_14DI",
+                "Offset": 14,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_15DI",
+                "Offset": 15,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_16DI",
+                "Offset": 16,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_17DI",
+                "Offset": 17,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_18DI",
+                "Offset": 18,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_19DI",
+                "Offset": 19,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_20DI",
+                "Offset": 20,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_21DI",
+                "Offset": 21,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_22DI",
+                "Offset": 22,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_23DI",
+                "Offset": 23,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_24DI",
+                "Offset": 24,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_25DI",
+                "Offset": 25,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_26DI",
+                "Offset": 26,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_27DI",
+                "Offset": 27,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_28DI",
+                "Offset": 28,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_29DI",
+                "Offset": 29,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_30DI",
+                "Offset": 30,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_31DI",
+                "Offset": 31,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "Device1/DQ",
+      "Submodules": [
+        {
+          "Name": "DQ",
+          "HardwareIdentifier": 258,
+          "Outputs": {
+            "StartAddress": "32.0",
+            "EndAddress": "35.7",
+            "Length": 32,
+            "Source": "UserDefined",
+            "SignalLayout": [
+              {
+                "Name": "Channel_00DO",
+                "Offset": 0,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_01DO",
+                "Offset": 1,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_02DO",
+                "Offset": 2,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_03DO",
+                "Offset": 3,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_04DO",
+                "Offset": 4,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_05DO",
+                "Offset": 5,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_06DO",
+                "Offset": 6,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_07DO",
+                "Offset": 7,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_08DO",
+                "Offset": 8,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_09DO",
+                "Offset": 9,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_10DO",
+                "Offset": 10,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_11DO",
+                "Offset": 11,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_12DO",
+                "Offset": 12,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_13DO",
+                "Offset": 13,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_14DO",
+                "Offset": 14,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_15DO",
+                "Offset": 15,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_16DO",
+                "Offset": 16,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_17DO",
+                "Offset": 17,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_18DO",
+                "Offset": 18,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_19DO",
+                "Offset": 19,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_20DO",
+                "Offset": 20,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_21DO",
+                "Offset": 21,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_22DO",
+                "Offset": 22,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_23DO",
+                "Offset": 23,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_24DO",
+                "Offset": 24,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_25DO",
+                "Offset": 25,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_26DO",
+                "Offset": 26,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_27DO",
+                "Offset": 27,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_28DO",
+                "Offset": 28,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_29DO",
+                "Offset": 29,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_30DO",
+                "Offset": 30,
+                "Length": 1
+              },
+              {
+                "Name": "Channel_31DO",
+                "Offset": 31,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

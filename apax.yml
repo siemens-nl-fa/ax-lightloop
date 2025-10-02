@@ -4,41 +4,70 @@ version: 0.0.1
 type: app
 targets:
   - "1500"
-  - "plcsim"
-  - "swcpu"
-  - "llvm"
-variables:
-  APAX_BUILD_ARGS:
-    - "--debug" # Generate debug information for target "1500"
-  # when running `apax build`, `stc` will be called with an additional `--input some-dir` parameter
-  IP_PLC: 192.168.0.1
+  - llvm
 
 dependencies:
-  "@ax/system-timer": ^6.0.94
-  "@ax/trace": ^2.7.0
+  "@ax/system-timer": ^10.1.98
 devDependencies:
-  "@ax/sdk": 2311.0.1
-  "@simatic-ax/snippetscollection": ^0.1.3
+  "@ax/sdk": ^2504.1.2
 
 installStrategy: strict
 apaxVersion: 3.1.0
 
-registries:
-  '@simatic-ax': 'https://npm.pkg.github.com/'
+# Project variables
+variables:
+  APAX_BUILD_ARGS:
+    - --debug # Enable debug information for value debugging 
+  BIN_FOLDER: "./bin/1500" # choose your target RT, here : any S7-1500 PLC
+  # IP address must match with the IP address of your target device
+  # The IP address in the .vscode/launch.json must be equal  
+  # APAX_TEST_ARGS: 
+  #   - --loglevel 
+  #   - debug
+  IP_ADDRESS: "192.168.0.1"
+  PASSWORD: ""
+  PLCNAME: "PLC_1"
+  CERTIFICATE: "./cert/PlcCertificate.p12"
 
+# Apax scripts
 scripts:
-  loadsim: apax sld load --accept-security-disclaimer -i ".\\bin\\plcsim" -t
-    $IP_PLC --mode full -l debug
-  loadsw: apax sld load --accept-security-disclaimer -i ".\\bin\\swcpu" -t
-    $IP_PLC  --mode full -l debug
-  load1500: apax sld load --accept-security-disclaimer -i ".\\bin\\1500" -t
-    $IP_PLC --mode full -l debug
-  blsim:
+  # call 'apax load' to download the builded program to the target. An 'apax build' might be required upfront
+  load: apax sld load --input $BIN_FOLDER --target $IP_ADDRESS --restart -C "./cert/PlcCertificatePublic.crt" --accept-security-disclaimer --log debug
+  # call 'apax dlplc' to build and download the application to the target
+  dlplc:
     - apax build
-    - apax loadsim
-  blsw:
-    - apax build
-    - apax loadsw
-  bl1500:
-    - apax build
-    - apax load1500
+    - apax load
+
+  # setup secure connection for hw download using certificates
+  setuphw: apax hwc setup-secure-communication --input "./hw" --module-name $PLCNAME -M $PASSWORD
+  # generate a certificate
+  createcert:
+    - $env:PATH += ";$($env:ProgramFiles)\Git\usr\bin"
+    - ./cert/createCertificateViaOpenSSL.bat
+  # import certificate for TLS for use with hw config
+  importcerttls: apax hwc import-certificate -i "./hw" -n $PLCNAME  -C $CERTIFICATE --purpose TLS --passphrase $PASSWORD
+  # import certificate for OPC UA
+  importcertopc: apax hwc import-certificate -i "./hw" -n $PLCNAME  -C $CERTIFICATE --purpose OpcUaServer --passphrase $PASSWORD
+  # compile the hwconfig
+  compilehw: apax hwc compile --input "./hw" --output "./bin/hw"
+  # download hwconfig
+  hwload: apax hwld load --input "./bin/hw/PLC_1" -M:$PASSWORD --target $IP_ADDRESS -l "Information" --accept-security-disclaimer
+  # load opc ua config
+  loadua:
+    - apax oscr install -s --input $BIN_FOLDER --target $IP_ADDRESS --accept-security-disclaimer
+  # command to initate hw config from scratch
+  inithwload:
+    #- apax setuphw
+    - apax importcerttls
+    - apax importcertopc
+    - apax compilehw
+    - apax hwload
+  # https://console.simatic-ax.siemens.io/docs/hw/security/authentication/howtocreatecertificate
+  # download hw sw and opcua
+  loadall:
+    - apax hwload
+    - apax dlplc
+  # compile and load hwconfig
+  loadhw:
+    - apax compilehw
+    - apax hwload

@@ -1,0 +1,78 @@
+{
+    "Devices": [
+      {
+        "Name": "Device1",
+        "Modules": [
+          {
+            "Name": "PLC_1",
+            "TypeIdentifier": {
+              "OrderNumber": "6ES7 511-1AL03-0AB0",
+              "Version": "V3.0"
+            },
+            "AccessProtection": {
+              "AccessLevel": "FullAccess"
+            },
+            "Parameters":{
+            "OpcUaPurchasedLicense": 3
+            },
+            "Services": [
+            {
+              "Type": "OpcUaServer",
+              "Enabled": true,
+              "Parameters": {
+                "GuestAuthentication": true,
+                "SecurityPolicies": [
+                  "NoSecurity"
+                ]
+              }
+            }
+          ],
+
+
+
+            "Ports": [
+              {
+                "Name": "Port1",
+                "Label": "X1 P1"
+              },
+              {
+                "Name": "Port2",
+                "Label": "X1 P2"
+              }
+            ],
+            "Interfaces": [
+              {
+                "Name": "Interface1",
+                "Label": "X1",
+                "Addresses": {
+                  "Configured": [
+                    { "IPv4": "192.168.0.1/24" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "Name": "DQ",
+            "TypeIdentifier": {
+              "OrderNumber": "6ES7 522-1BL01-0AB0",
+              "Version": "V1.1"
+            },
+            "IoConfiguration": {
+              "OutputAddress" : "32"
+            }
+          },
+          {
+            "Name": "DI",
+            "TypeIdentifier": {
+              "OrderNumber": "6ES7 521-1BL00-0AB0",
+              "Version": "V2.2"
+            },
+            "IoConfiguration": {
+              "InputAddress" : "9"
+            }
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "HardwareIdentifiers": [
+    {
+      "Name": "Device1",
+      "Value": 32
+    },
+    {
+      "Name": "Device1~DI~DI",
+      "Value": 257
+    },
+    {
+      "Name": "Device1~DQ~DQ",
+      "Value": 258
+    },
+    {
+      "Name": "Device1~PLC_1",
+      "Value": 48
+    },
+    {
+      "Name": "Device1~PLC_1~CPU display_1",
+      "Value": 54
+    },
+    {
+      "Name": "Device1~PLC_1~Card reader/writer_1",
+      "Value": 51
+    },
+    {
+      "Name": "Device1~PLC_1~Interface1",
+      "Value": 64
+    },
+    {
+      "Name": "Device1~PLC_1~Interface1~Port1",
+      "Value": 65
+    },
+    {
+      "Name": "Device1~PLC_1~Interface1~Port2",
+      "Value": 66
+    },
+    {
+      "Name": "Device1~PLC_1~OPC UA_1",
+      "Value": 117
+    },
+    {
+      "Name": "Device1~PLC_1~Virtual communication interface",
+      "Value": 135
+    },
+    {
+      "Name": "Device1~Rail_0",
+      "Value": 256
+    }
+  ]
+}
